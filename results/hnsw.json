@@ -1,0 +1,1439 @@
+{
+  "configurations": {
+    "capstone_cosine": {
+      "params": {
+        "vectors": {
+          "size": 384,
+          "distance": "Cosine",
+          "hnsw_config": null,
+          "quantization_config": null,
+          "on_disk": null,
+          "memory": null,
+          "datatype": null,
+          "multivector_config": null
+        },
+        "shard_number": 1,
+        "sharding_method": null,
+        "replication_factor": 1,
+        "write_consistency_factor": 1,
+        "read_fan_out_factor": null,
+        "read_fan_out_delay_ms": null,
+        "on_disk_payload": true,
+        "payload": null,
+        "id_tracker": null,
+        "sparse_vectors": null
+      },
+      "hnsw_config": {
+        "m": 16,
+        "ef_construct": 100,
+        "full_scan_threshold": 10,
+        "max_indexing_threads": 0,
+        "on_disk": false,
+        "memory": null,
+        "payload_m": null,
+        "inline_storage": null
+      },
+      "optimizer_config": {
+        "deleted_threshold": 0.2,
+        "vacuum_min_vector_number": 1000,
+        "default_segment_number": 0,
+        "max_segment_size": null,
+        "memmap_threshold": null,
+        "indexing_threshold": 1,
+        "flush_interval_sec": 5,
+        "max_optimization_threads": null,
+        "prevent_unoptimized": null
+      },
+      "wal_config": {
+        "wal_capacity_mb": 32,
+        "wal_segments_ahead": 0,
+        "wal_retain_closed": 1
+      },
+      "quantization_config": null,
+      "strict_mode_config": null,
+      "metadata": null
+    },
+    "capstone_cosine_weak": {
+      "params": {
+        "vectors": {
+          "size": 384,
+          "distance": "Cosine",
+          "hnsw_config": null,
+          "quantization_config": null,
+          "on_disk": null,
+          "memory": null,
+          "datatype": null,
+          "multivector_config": null
+        },
+        "shard_number": 1,
+        "sharding_method": null,
+        "replication_factor": 1,
+        "write_consistency_factor": 1,
+        "read_fan_out_factor": null,
+        "read_fan_out_delay_ms": null,
+        "on_disk_payload": true,
+        "payload": null,
+        "id_tracker": null,
+        "sparse_vectors": null
+      },
+      "hnsw_config": {
+        "m": 4,
+        "ef_construct": 16,
+        "full_scan_threshold": 10,
+        "max_indexing_threads": 0,
+        "on_disk": false,
+        "memory": null,
+        "payload_m": null,
+        "inline_storage": null
+      },
+      "optimizer_config": {
+        "deleted_threshold": 0.2,
+        "vacuum_min_vector_number": 1000,
+        "default_segment_number": 0,
+        "max_segment_size": null,
+        "memmap_threshold": null,
+        "indexing_threshold": 1,
+        "flush_interval_sec": 5,
+        "max_optimization_threads": null,
+        "prevent_unoptimized": null
+      },
+      "wal_config": {
+        "wal_capacity_mb": 32,
+        "wal_segments_ahead": 0,
+        "wal_retain_closed": 1
+      },
+      "quantization_config": null,
+      "strict_mode_config": null,
+      "metadata": null
+    }
+  },
+  "warmups": 3,
+  "repeats": 10,
+  "results": [
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "exact",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "exact": true,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        3.420374996494502,
+        3.6594579578377306,
+        3.5815840237773955,
+        3.3425000146962702,
+        2.8952499851584435,
+        2.6602920261211693,
+        2.6798329781740904,
+        2.258624997921288,
+        2.483583986759186,
+        2.0558329997584224
+      ],
+      "median_latency_ms": 2.787541481666267
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_ef16",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        2.5380419683642685,
+        2.905417000874877,
+        3.4029590315185487,
+        4.024207999464124,
+        2.8889160021208227,
+        2.141958975698799,
+        2.250917023047805,
+        2.0418339991010725,
+        1.9599170191213489,
+        2.3080420214682817
+      ],
+      "median_latency_ms": 2.423041994916275
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_ef64",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        2.6105829747393727,
+        2.3344579967670143,
+        2.41183303296566,
+        2.2026250371709466,
+        2.520333044230938,
+        2.65520898392424,
+        2.2687079617753625,
+        2.1723330137319863,
+        2.2605000413022935,
+        2.3273330298252404
+      ],
+      "median_latency_ms": 2.3308955132961273
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_ef128",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        2.1277079940773547,
+        2.1754169720225036,
+        1.8668749835342169,
+        2.054415992461145,
+        2.200916991569102,
+        2.0413330057635903,
+        1.7659160075709224,
+        1.9842080073431134,
+        2.199667040258646,
+        2.3615829995833337
+      ],
+      "median_latency_ms": 2.09106199326925
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_weak_ef16",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.570250024087727,
+        1.7144159646704793,
+        1.8244580132886767,
+        2.3557919776067138,
+        1.860791991930455,
+        1.9189169979654253,
+        1.7842499655671418,
+        1.652708975598216,
+        1.8877499969676137,
+        1.7131249769590795
+      ],
+      "median_latency_ms": 1.8043539894279093
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_weak_ef64",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.9324999884702265,
+        1.7367499531246722,
+        1.55458296649158,
+        1.6324169700965285,
+        1.8635839805938303,
+        1.8446249887347221,
+        1.6936250030994415,
+        1.6985409893095493,
+        1.557875017169863,
+        1.47854199167341
+      ],
+      "median_latency_ms": 1.6960829962044954
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "method": "capstone_cosine_weak_ef128",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2497,
+        3346,
+        515,
+        1269,
+        1285
+      ],
+      "scores": [
+        0.49028385,
+        0.4372967,
+        0.42937732,
+        0.42895982,
+        0.42367092
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.5680420328862965,
+        1.728750008624047,
+        1.7664170009084046,
+        1.7093340284191072,
+        1.6449999529868364,
+        1.8311250023543835,
+        2.1476669935509562,
+        2.080792037304491,
+        1.6719999839551747,
+        1.4779999619349837
+      ],
+      "median_latency_ms": 1.7190420185215771
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "exact",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "exact": true,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.5725829871371388,
+        1.4559170231223106,
+        1.3504159869626164,
+        1.3810829841531813,
+        1.3191250036470592,
+        1.4642919995822012,
+        1.6346669872291386,
+        1.9132919842377305,
+        1.6336249536834657,
+        1.6750000067986548
+      ],
+      "median_latency_ms": 1.51843749335967
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_ef16",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.9410839886404574,
+        2.126084000337869,
+        1.8235829775221646,
+        1.6527499537914991,
+        2.1124170161783695,
+        2.4999170564115047,
+        1.690667006187141,
+        2.1474589593708515,
+        1.7747500096447766,
+        1.540500030387193
+      ],
+      "median_latency_ms": 1.882333483081311
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_ef64",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.9721250282600522,
+        1.7057079821825027,
+        1.474583987146616,
+        1.949166995473206,
+        1.6676250379532576,
+        1.642499992158264,
+        1.649084035307169,
+        2.087583008687943,
+        1.6191250178962946,
+        1.5607920358888805
+      ],
+      "median_latency_ms": 1.6583545366302133
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_ef128",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.8872079672291875,
+        1.5527079813182354,
+        1.472459000069648,
+        1.4624999603256583,
+        1.6479170299135149,
+        2.060334023553878,
+        1.5084170154295862,
+        3.076791006606072,
+        3.0172080150805414,
+        1.7018329817801714
+      ],
+      "median_latency_ms": 1.6748750058468431
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_weak_ef16",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.8155419966205955,
+        1.4805410173721611,
+        1.3864579959772527,
+        1.9221670227125287,
+        1.9210419850423932,
+        1.6065000090748072,
+        1.5102499746717513,
+        1.3984160032123327,
+        1.641749986447394,
+        1.5325830318033695
+      ],
+      "median_latency_ms": 1.5695415204390883
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_weak_ef64",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.7793330480344594,
+        1.74100004369393,
+        1.5276669873856008,
+        1.6576250200159848,
+        1.5287920250557363,
+        1.8892080406658351,
+        1.7698750016279519,
+        1.5652080182917416,
+        1.4001249801367521,
+        1.62920803995803
+      ],
+      "median_latency_ms": 1.6434165299870074
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "method": "capstone_cosine_weak_ef128",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        5377,
+        5673,
+        3201,
+        10,
+        2216
+      ],
+      "scores": [
+        0.5015549,
+        0.50052285,
+        0.49150828,
+        0.39888147,
+        0.39202312
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.6279160045087337,
+        2.3248750367201865,
+        1.8410420161671937,
+        1.6311670187860727,
+        1.4468749868683517,
+        1.639333029743284,
+        1.902792020700872,
+        1.6493750154040754,
+        1.6270410269498825,
+        1.7119169933721423
+      ],
+      "median_latency_ms": 1.6443540225736797
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "exact",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "exact": true,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        4840
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31727254
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.6389169613830745,
+        1.746875001117587,
+        1.5614169533364475,
+        1.602000033017248,
+        1.744957990013063,
+        1.5142080374062061,
+        1.7242910107597709,
+        1.687832991592586,
+        1.6760420403443277,
+        1.486582972574979
+      ],
+      "median_latency_ms": 1.657479500863701
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_ef16",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        4840
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31727254
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.6307919868268073,
+        1.3862079940736294,
+        1.3714999658986926,
+        1.3492499710991979,
+        1.3108329731039703,
+        1.3862079940736294,
+        1.6402920009568334,
+        1.9058750476688147,
+        1.5013330266810954,
+        1.6593750333413482
+      ],
+      "median_latency_ms": 1.4437705103773624
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_ef64",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        4840
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31727254
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.599124982021749,
+        1.5978749725036323,
+        1.5565829817205667,
+        1.5848749899305403,
+        1.6485420055687428,
+        2.036249963566661,
+        1.6130000003613532,
+        1.464208005927503,
+        1.6455840086564422,
+        1.8265419639647007
+      ],
+      "median_latency_ms": 1.606062491191551
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_ef128",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        4840
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31727254
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.5944999759085476,
+        1.96583301294595,
+        2.1529580117203295,
+        1.794292009435594,
+        1.6575839836150408,
+        1.869542000349611,
+        1.6500829951837659,
+        1.7895420314744115,
+        1.9062500214204192,
+        1.7611249932087958
+      ],
+      "median_latency_ms": 1.7919170204550028
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_weak_ef16",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        59
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31338435
+      ],
+      "overlap_at_5": 0.8,
+      "latency_ms": [
+        1.997375045903027,
+        1.5523330075666308,
+        1.8773750052787364,
+        1.5975419664755464,
+        1.4903330011293292,
+        1.3966659898869693,
+        1.5331670292653143,
+        1.6762909945100546,
+        1.5118750161491334,
+        1.4198339777067304
+      ],
+      "median_latency_ms": 1.5427500184159726
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_weak_ef64",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        59
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31338435
+      ],
+      "overlap_at_5": 0.8,
+      "latency_ms": [
+        1.7221670132130384,
+        4.064417036715895,
+        3.2984999706968665,
+        3.409292025025934,
+        2.976000017952174,
+        2.4756669881753623,
+        3.6118330317549407,
+        3.3024579752236605,
+        2.1500419825315475,
+        2.047165995463729
+      ],
+      "median_latency_ms": 3.1372499943245202
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "method": "capstone_cosine_weak_ef128",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        1071,
+        5969,
+        4312,
+        3836,
+        59
+      ],
+      "scores": [
+        0.36156523,
+        0.33070943,
+        0.32240006,
+        0.3184375,
+        0.31338435
+      ],
+      "overlap_at_5": 0.8,
+      "latency_ms": [
+        1.8570829997770488,
+        1.9414170528762043,
+        1.7046250286512077,
+        1.6558330389671028,
+        1.6890409751795232,
+        1.734208024572581,
+        1.8049170030280948,
+        1.5530419768765569,
+        1.4910419704392552,
+        1.4354580198414624
+      ],
+      "median_latency_ms": 1.6968330019153655
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "exact",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "exact": true,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.5721670351922512,
+        1.5669999993406236,
+        1.4722920022904873,
+        1.6775830299593508,
+        1.7299170140177011,
+        1.661041984334588,
+        2.1068750065751374,
+        1.509791996795684,
+        1.7274169949814677,
+        1.5426669851876795
+      ],
+      "median_latency_ms": 1.6166045097634196
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_ef16",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.587832986842841,
+        1.650916994549334,
+        1.5493340324610472,
+        1.3592079631052911,
+        1.3730829814448953,
+        1.5562499756924808,
+        1.8914170213975012,
+        1.7380000208504498,
+        1.669667020905763,
+        1.6194999916478992
+      ],
+      "median_latency_ms": 1.60366648924537
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_ef64",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.584750018082559,
+        1.6685000155121088,
+        1.6428749659098685,
+        1.7730409745126963,
+        1.6348329954780638,
+        1.4918750384822488,
+        1.4964999863877892,
+        1.6186669818125665,
+        1.852207991760224,
+        1.5767909935675561
+      ],
+      "median_latency_ms": 1.6267499886453152
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_ef128",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.8622910138219595,
+        2.0083329873159528,
+        1.7998339608311653,
+        2.030832984019071,
+        1.808249973692,
+        1.7976669478230178,
+        1.7844999674707651,
+        1.6768749919719994,
+        1.8058340065181255,
+        1.8666669493541121
+      ],
+      "median_latency_ms": 1.8070419901050627
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_weak_ef16",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.9824590417556465,
+        1.65350001771003,
+        1.731541007757187,
+        1.566166989505291,
+        1.6027920064516366,
+        1.8809590255841613,
+        1.669667020905763,
+        1.5790420002304018,
+        1.5765000134706497,
+        1.663625007495284
+      ],
+      "median_latency_ms": 1.658562512602657
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_weak_ef64",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.568417006637901,
+        1.7330420087091625,
+        1.5942499740049243,
+        1.7133749788627028,
+        1.6747909830883145,
+        1.5642920043319464,
+        1.6937089967541397,
+        1.7177499830722809,
+        1.786624954547733,
+        1.5157919842749834
+      ],
+      "median_latency_ms": 1.684249989921227
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "method": "capstone_cosine_weak_ef128",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        4499,
+        1085,
+        1556,
+        4686,
+        4690
+      ],
+      "scores": [
+        0.41959977,
+        0.41440576,
+        0.41406095,
+        0.3682646,
+        0.36806646
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.7945000436156988,
+        1.4999999548308551,
+        1.5215000021271408,
+        1.7540829721838236,
+        1.764874963555485,
+        1.7664589686319232,
+        1.723958004731685,
+        1.6000419855117798,
+        1.8162920023314655,
+        1.9161669770255685
+      ],
+      "median_latency_ms": 1.7594789678696543
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "exact",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "exact": true,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.7904999549500644,
+        1.7722079646773636,
+        2.0034590270370245,
+        1.6242919955402613,
+        1.6317919944413006,
+        1.6041250200942159,
+        1.9804579787887633,
+        1.5387500170618296,
+        1.535459014121443,
+        1.477166952099651
+      ],
+      "median_latency_ms": 1.628041994990781
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_ef16",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.480083039496094,
+        1.5869170310907066,
+        1.701833971310407,
+        1.5447919722646475,
+        1.6337089473381639,
+        1.5511660021729767,
+        1.5407080063596368,
+        1.6819169977679849,
+        1.809458015486598,
+        1.637917011976242
+      ],
+      "median_latency_ms": 1.6103129892144352
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_ef64",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        2.1267919801175594,
+        1.6611249884590507,
+        1.4892080216668546,
+        1.6385409981012344,
+        1.7657079733908176,
+        1.6243749996647239,
+        1.7537910025566816,
+        1.8374160281382501,
+        1.7354590236209333,
+        1.856165996287018
+      ],
+      "median_latency_ms": 1.7446250130888075
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_ef128",
+      "collection": "capstone_cosine",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.9179169903509319,
+        1.954540959559381,
+        2.0156250102445483,
+        1.7870829906314611,
+        1.707000017631799,
+        1.8504159525036812,
+        1.9805419724434614,
+        1.637083012610674,
+        1.668957993388176,
+        1.828916952945292
+      ],
+      "median_latency_ms": 1.8396664527244866
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_weak_ef16",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 16,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        864,
+        1916,
+        4751,
+        3167,
+        4541
+      ],
+      "scores": [
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656,
+        0.41479987
+      ],
+      "overlap_at_5": 0.8,
+      "latency_ms": [
+        1.9377080025151372,
+        1.601249969098717,
+        1.4880000380799174,
+        1.6210000030696392,
+        1.473915996029973,
+        1.5784999704919755,
+        1.6096250037662685,
+        1.7103750142268836,
+        1.6590410377830267,
+        1.4107500319369137
+      ],
+      "median_latency_ms": 1.6054374864324927
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_weak_ef64",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 64,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.6665409784764051,
+        1.6439169994555414,
+        1.5867500333115458,
+        1.5554999699816108,
+        1.6695830272510648,
+        1.5504999901168048,
+        1.594416971784085,
+        1.6653749626129866,
+        1.6140830121003091,
+        1.673749997280538
+      ],
+      "median_latency_ms": 1.6290000057779253
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "method": "capstone_cosine_weak_ef128",
+      "collection": "capstone_cosine_weak",
+      "search_params": {
+        "hnsw_ef": 128,
+        "exact": false,
+        "indexed_only": false
+      },
+      "ids": [
+        2777,
+        864,
+        1916,
+        4751,
+        3167
+      ],
+      "scores": [
+        0.561305,
+        0.4343228,
+        0.4295553,
+        0.42870522,
+        0.4193656
+      ],
+      "overlap_at_5": 1.0,
+      "latency_ms": [
+        1.7823329544626176,
+        1.7727499944157898,
+        1.6272920183837414,
+        1.922665978781879,
+        1.6558329807594419,
+        1.6568329883739352,
+        1.7964590224437416,
+        1.8874169909395278,
+        1.5891660004854202,
+        1.482207968365401
+      ],
+      "median_latency_ms": 1.7147914913948625
+    }
+  ]
+}
