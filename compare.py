@@ -1,5 +1,11 @@
 import json
 import re
+import argparse
+import joblib
+
+from compare_raw_metrics import COLLECTIONS as RAW_COLLECTIONS
+from ivf import search_ivf
+from setup_hnsw import CONFIGS
 
 import numpy as np
 from qdrant_client import QdrantClient, models
@@ -82,5 +88,120 @@ def main():
     )
     print(f"\nSaved results to {output}")
 
+def run_demo(query_number):
+    queries = json.loads(
+        (ARTIFACTS / "queries.json").read_text(encoding="utf-8")
+    )
+    vectors = np.load(ARTIFACTS / "query_vectors.npy")
+    raw_vectors = np.load(ARTIFACTS / "raw_query_vectors.npy")
+    index = joblib.load(ARTIFACTS / "ivf_index.joblib")
+
+    position = query_number - 1
+    query = queries[position]
+    vector = vectors[position]
+    raw_vector = raw_vectors[position]
+
+    print(f"\nQuery {query_number}: {query}")
+
+    def show(label, ids, scores, ground_truth=None):
+        print(f"\n{label}")
+        if ground_truth is not None:
+            overlap = len(set(ids) & ground_truth) / 5
+            print(f"Overlap with normalized exact search: {overlap:.0%}")
+
+        for rank, (point_id, score) in enumerate(zip(ids, scores), 1):
+            print(f"  {rank}. ID={point_id}, score={score:.6f}")
+
+    client = QdrantClient(url="http://localhost:6333", timeout=60)
+
+    try:
+        for collection in CONFIGS:
+            info = client.get_collection(collection)
+            assert info.status == models.CollectionStatus.GREEN
+            assert info.indexed_vectors_count >= len(index["ids"])
+            assert info.config.hnsw_config.full_scan_threshold == 10
+
+        print("\n--- Metric comparison: unnormalized embeddings ---")
+
+        for collection, distance in RAW_COLLECTIONS.items():
+            points = client.query_points(
+                collection_name=collection,
+                query=raw_vector.tolist(),
+                search_params=models.SearchParams(exact=True),
+                limit=5,
+                with_payload=False,
+            ).points
+
+            show(
+                f"{distance.value}, exact",
+                [point.id for point in points],
+                [point.score for point in points],
+            )
+
+        print("\n--- Index comparison: normalized cosine embeddings ---")
+
+        points = client.query_points(
+            collection_name="capstone_cosine",
+            query=vector.tolist(),
+            search_params=models.SearchParams(exact=True),
+            limit=5,
+            with_payload=False,
+        ).points
+
+        ground_truth = {point.id for point in points}
+        assert len(ground_truth) == 5
+
+        show(
+            "Exact cosine baseline",
+            [point.id for point in points],
+            [point.score for point in points],
+            ground_truth,
+        )
+
+        for collection in CONFIGS:
+            for ef in (16, 64, 128):
+                points = client.query_points(
+                    collection_name=collection,
+                    query=vector.tolist(),
+                    search_params=models.SearchParams(
+                        exact=False,
+                        hnsw_ef=ef,
+                    ),
+                    limit=5,
+                    with_payload=False,
+                ).points
+
+                show(
+                    f"{collection}, ef={ef}",
+                    [point.id for point in points],
+                    [point.score for point in points],
+                    ground_truth,
+                )
+
+        for nprobe in (1, 8):
+            result = search_ivf(index, vector, nprobe=nprobe, k=5)
+
+            show(
+                f"IVF, nprobe={nprobe}, "
+                f"candidates={result['candidate_count']}",
+                result["ids"],
+                result["scores"],
+                ground_truth,
+            )
+    finally:
+        client.close()
+
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--query-number",
+        type=int,
+        choices=range(1, 6),
+        help="Run all methods for one saved query, numbered 1–5.",
+    )
+    args = parser.parse_args()
+
+    if args.query_number is None:
+        main()
+    else:
+        run_demo(args.query_number)
