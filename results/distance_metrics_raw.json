@@ -1,0 +1,650 @@
+{
+  "embedding_variant": "Final Normalize layer removed",
+  "results": [
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "collection": "capstone_raw_cosine",
+      "metric": "Cosine",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 2497,
+          "score": 0.49028385,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Hi.  I am having some interesting problems with my Boca graphics card, which \nis based on the Cirrus Logic chipset (I am not sure exactly which one).  The\nproblem is as follows:\n\nIf I use any Windows driver at 800x600 except for the 64K-colour driver (ie\n16 colour or 256 colour), the image on screen becomes too tall - no amount of\nresizing on the monitor will make it fit.  And if I use Excel with the 64K-\ncolour driver, it hangs as soon as it loads.  Anyone out there used this\ncard/experienced anything similar.\n\nPlease reply by mail, and I will post any solutions here.\n\nRegards\n\n  - Simon\n\n\n--"
+        },
+        {
+          "rank": 2,
+          "id": 3346,
+          "score": 0.4372967,
+          "category": "comp.os.ms-windows.misc",
+          "text": "HHHHEEEELLLLPPPP Meeeeeee!\n\n\tI installed a 256 color svga driver for my windows last week.   \nThis driver was downloaded from ftp.cica.indiana.edu specifically for  \nParadise svga card.  However, after I installed it and when I run windows,  \nthe startup screen in the beginning becomes the old windows 3.0 startup  \nscreen ????!!??!!\n\n\tEverything works fine except the startup screen.  I know the  \nstartup screen must have been changed in the system.ini file (or is it ?)  \nbut I couldn't figure out what to alter!   Can some one help me with this?   \nPlease e-mail to my address:\n\n\tthang@tree.egr.uh.edu  or  thang@jetson.uh.edu\n\nIn addition, can anyone know where can I get a 1024x680 paradise svga  \ndriver (256 color) ?  this is a used computer and I do not have anything  \n(drivers, etc) regarding the driver...."
+        },
+        {
+          "rank": 3,
+          "id": 515,
+          "score": 0.4293773,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Hi, anyone have the latest drivers for the Actix Graphics Accelerator Card? \n(32 plus) The one I have (version 1.21) seem to have a lot of problems. \nI believe the latest version is 1.3 and would someone please \nupload it to some ftp site so that I can download it. \n\nThanks \n\n\n-- \n\n\nDaniel Y.H. Wong\t\t\t\t\tUofT:(416)978-1659\nwongda@picton.eecg.toronto.edu\t\t\t\tElectrical Engineering"
+        },
+        {
+          "rank": 4,
+          "id": 1269,
+          "score": 0.42895976,
+          "category": "comp.os.ms-windows.misc",
+          "text": "I have the same card, TVGA-8900c. When I checked, the latest driver for\nwindows 3.1 is dated Aug. 92 in garbo.uwasa.fi in /win31/drivers/video.\nIf you find a better version (updated) please let me know, Thanks."
+        },
+        {
+          "rank": 5,
+          "id": 1285,
+          "score": 0.4236709,
+          "category": "misc.forsale",
+          "text": "I have the following Nth Engine graphics cards for sale w/drivers for \nAutoCAD R11. Display list proccessing is done through hardware.\n\nB640\t- 640x480\nB752\t- 752x580\n\nI will take the highest reanable offer.\n--"
+        }
+      ]
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "collection": "capstone_raw_euclid",
+      "metric": "Euclid",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 2497,
+          "score": 5.5380254,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Hi.  I am having some interesting problems with my Boca graphics card, which \nis based on the Cirrus Logic chipset (I am not sure exactly which one).  The\nproblem is as follows:\n\nIf I use any Windows driver at 800x600 except for the 64K-colour driver (ie\n16 colour or 256 colour), the image on screen becomes too tall - no amount of\nresizing on the monitor will make it fit.  And if I use Excel with the 64K-\ncolour driver, it hangs as soon as it loads.  Anyone out there used this\ncard/experienced anything similar.\n\nPlease reply by mail, and I will post any solutions here.\n\nRegards\n\n  - Simon\n\n\n--"
+        },
+        {
+          "rank": 2,
+          "id": 515,
+          "score": 5.6558914,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Hi, anyone have the latest drivers for the Actix Graphics Accelerator Card? \n(32 plus) The one I have (version 1.21) seem to have a lot of problems. \nI believe the latest version is 1.3 and would someone please \nupload it to some ftp site so that I can download it. \n\nThanks \n\n\n-- \n\n\nDaniel Y.H. Wong\t\t\t\t\tUofT:(416)978-1659\nwongda@picton.eecg.toronto.edu\t\t\t\tElectrical Engineering"
+        },
+        {
+          "rank": 3,
+          "id": 1269,
+          "score": 5.658102,
+          "category": "comp.os.ms-windows.misc",
+          "text": "I have the same card, TVGA-8900c. When I checked, the latest driver for\nwindows 3.1 is dated Aug. 92 in garbo.uwasa.fi in /win31/drivers/video.\nIf you find a better version (updated) please let me know, Thanks."
+        },
+        {
+          "rank": 4,
+          "id": 1285,
+          "score": 5.666249,
+          "category": "misc.forsale",
+          "text": "I have the following Nth Engine graphics cards for sale w/drivers for \nAutoCAD R11. Display list proccessing is done through hardware.\n\nB640\t- 640x480\nB752\t- 752x580\n\nI will take the highest reanable offer.\n--"
+        },
+        {
+          "rank": 5,
+          "id": 3346,
+          "score": 5.677614,
+          "category": "comp.os.ms-windows.misc",
+          "text": "HHHHEEEELLLLPPPP Meeeeeee!\n\n\tI installed a 256 color svga driver for my windows last week.   \nThis driver was downloaded from ftp.cica.indiana.edu specifically for  \nParadise svga card.  However, after I installed it and when I run windows,  \nthe startup screen in the beginning becomes the old windows 3.0 startup  \nscreen ????!!??!!\n\n\tEverything works fine except the startup screen.  I know the  \nstartup screen must have been changed in the system.ini file (or is it ?)  \nbut I couldn't figure out what to alter!   Can some one help me with this?   \nPlease e-mail to my address:\n\n\tthang@tree.egr.uh.edu  or  thang@jetson.uh.edu\n\nIn addition, can anyone know where can I get a 1024x680 paradise svga  \ndriver (256 color) ?  this is a used computer and I do not have anything  \n(drivers, etc) regarding the driver...."
+        }
+      ]
+    },
+    {
+      "query": "How can I fix a graphics card driver problem on my computer?",
+      "collection": "capstone_raw_dot",
+      "metric": "Dot",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 142,
+          "score": 12.5721035,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Version 2.03 drivers are current."
+        },
+        {
+          "rank": 2,
+          "id": 5934,
+          "score": 11.3603945,
+          "category": "comp.sys.ibm.pc.hardware",
+          "text": "Maybe its a monitor problem.  You mentioned that you swapped cards, but not\nmonitors.  Perhaps that could be it.\n\nDan"
+        },
+        {
+          "rank": 3,
+          "id": 678,
+          "score": 10.797285,
+          "category": "comp.sys.ibm.pc.hardware",
+          "text": "I would appreciate the driver name from CICA which functions as a 256\ncolor driver for a Quadtel video card. The type of chip or chipset used\nwould suffice as well."
+        },
+        {
+          "rank": 4,
+          "id": 1926,
+          "score": 10.136772,
+          "category": "comp.os.ms-windows.misc",
+          "text": "Does anybody know the FTP site with the latest Windows drivers for the ATI\nGUP?\nThanks"
+        },
+        {
+          "rank": 5,
+          "id": 3310,
+          "score": 10.119814,
+          "category": "comp.graphics",
+          "text": "WHATS THIS  680x1024 256 color mode? Asking a lot of your hardware ?"
+        }
+      ]
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "collection": "capstone_raw_cosine",
+      "metric": "Cosine",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 5377,
+          "score": 0.5015549,
+          "category": "rec.motorcycles",
+          "text": "Hi. I have been thinking about buying a Motorcycle or a while now and I have\nsome questions:\n\n-Is there a buying guide for new/used motorcycles (that lists reliability, how\nto go about the buying process, what to look for, etc...)?\n-Is there a pricing guide for new/used motorcycles (Blue Book)?\n\nAlso\n-Are there any books/articles on riding cross country, motorcycle camping, etc?\n-Is there an idiots' guide to motorcycles?\n\nANY related information is helpful. Please respond directly to me.\n\nThanks a lot.\n-Jordan\n\nMe also.\n\t\t\t\t\tThanks,"
+        },
+        {
+          "rank": 2,
+          "id": 5673,
+          "score": 0.50052285,
+          "category": "rec.motorcycles",
+          "text": "Hi. I have been thinking about buying a Motorcycle or a while now and I have\nsome questions:\n\n-Is there a buying guide for new/used motorcycles (that lists reliability, how\nto go about the buying process, what to look for, etc...)?\n-Is there a pricing guide for new/used motorcycles (Blue Book)?\n\nAlso\n-Are there any books/articles on riding cross country, motorcycle camping, etc?\n-Is there an idiots' guide to motorcycles?\n\nANY related information is helpful. Please respond directly to me."
+        },
+        {
+          "rank": 3,
+          "id": 3201,
+          "score": 0.49150836,
+          "category": "rec.motorcycles",
+          "text": "Greg,\n\nI'm very new to motorcycles. Haven't even bought one yet. I was in the same\nposition about you. How do you learn if you've never ridden.\n\nI took a class put on by a group called the Motorcycle Safety Foundation\nin California. They might have something similar in Washington."
+        },
+        {
+          "rank": 4,
+          "id": 10,
+          "score": 0.39888144,
+          "category": "rec.motorcycles",
+          "text": "I have a line on a Ducati 900GTS 1978 model with 17k on the clock.  Runs\nvery well, paint is the bronze/brown/orange faded out, leaks a bit of oil\nand pops out of 1st with hard accel.  The shop will fix trans and oil \nleak.  They sold the bike to the 1 and only owner.  They want $3495, and\nI am thinking more like $3K.  Any opinions out there?  Please email me.\nThanks.  It would be a nice stable mate to the Beemer.  Then I'll get\na jap bike and call myself Axis Motors!\n\n-- \n-----------------------------------------------------------------------\n\"Tuba\" (Irwin)      \"I honk therefore I am\"     CompuTrac-Richardson,Tx\nirwin@cmptrc.lonestar.org    DoD #0826          (R75/6)"
+        },
+        {
+          "rank": 5,
+          "id": 2216,
+          "score": 0.39202315,
+          "category": "rec.motorcycles",
+          "text": "I learned when riding bareback as a kid to \"palm-reign\", by just \npushing on the right side of the horse's neck with your right palm to turn \nleft - a lot like countersteering. So that came pretty easy to me in the \ntransition to motorcycles. It took a while however to break my habit of \nkicking the rear fender with my heels to go faster."
+        }
+      ]
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "collection": "capstone_raw_euclid",
+      "metric": "Euclid",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 5673,
+          "score": 5.2302217,
+          "category": "rec.motorcycles",
+          "text": "Hi. I have been thinking about buying a Motorcycle or a while now and I have\nsome questions:\n\n-Is there a buying guide for new/used motorcycles (that lists reliability, how\nto go about the buying process, what to look for, etc...)?\n-Is there a pricing guide for new/used motorcycles (Blue Book)?\n\nAlso\n-Are there any books/articles on riding cross country, motorcycle camping, etc?\n-Is there an idiots' guide to motorcycles?\n\nANY related information is helpful. Please respond directly to me."
+        },
+        {
+          "rank": 2,
+          "id": 5377,
+          "score": 5.2351303,
+          "category": "rec.motorcycles",
+          "text": "Hi. I have been thinking about buying a Motorcycle or a while now and I have\nsome questions:\n\n-Is there a buying guide for new/used motorcycles (that lists reliability, how\nto go about the buying process, what to look for, etc...)?\n-Is there a pricing guide for new/used motorcycles (Blue Book)?\n\nAlso\n-Are there any books/articles on riding cross country, motorcycle camping, etc?\n-Is there an idiots' guide to motorcycles?\n\nANY related information is helpful. Please respond directly to me.\n\nThanks a lot.\n-Jordan\n\nMe also.\n\t\t\t\t\tThanks,"
+        },
+        {
+          "rank": 3,
+          "id": 3201,
+          "score": 5.2639413,
+          "category": "rec.motorcycles",
+          "text": "Greg,\n\nI'm very new to motorcycles. Haven't even bought one yet. I was in the same\nposition about you. How do you learn if you've never ridden.\n\nI took a class put on by a group called the Motorcycle Safety Foundation\nin California. They might have something similar in Washington."
+        },
+        {
+          "rank": 4,
+          "id": 2216,
+          "score": 5.5556035,
+          "category": "rec.motorcycles",
+          "text": "I learned when riding bareback as a kid to \"palm-reign\", by just \npushing on the right side of the horse's neck with your right palm to turn \nleft - a lot like countersteering. So that came pretty easy to me in the \ntransition to motorcycles. It took a while however to break my habit of \nkicking the rear fender with my heels to go faster."
+        },
+        {
+          "rank": 5,
+          "id": 10,
+          "score": 5.573991,
+          "category": "rec.motorcycles",
+          "text": "I have a line on a Ducati 900GTS 1978 model with 17k on the clock.  Runs\nvery well, paint is the bronze/brown/orange faded out, leaks a bit of oil\nand pops out of 1st with hard accel.  The shop will fix trans and oil \nleak.  They sold the bike to the 1 and only owner.  They want $3495, and\nI am thinking more like $3K.  Any opinions out there?  Please email me.\nThanks.  It would be a nice stable mate to the Beemer.  Then I'll get\na jap bike and call myself Axis Motors!\n\n-- \n-----------------------------------------------------------------------\n\"Tuba\" (Irwin)      \"I honk therefore I am\"     CompuTrac-Richardson,Tx\nirwin@cmptrc.lonestar.org    DoD #0826          (R75/6)"
+        }
+      ]
+    },
+    {
+      "query": "What maintenance should I perform on a used motorcycle?",
+      "collection": "capstone_raw_dot",
+      "metric": "Dot",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 5685,
+          "score": 9.923678,
+          "category": "rec.motorcycles",
+          "text": "Obviously never rode a good 250 or open-class bike!"
+        },
+        {
+          "rank": 2,
+          "id": 1381,
+          "score": 9.920456,
+          "category": "rec.motorcycles",
+          "text": "Don't you mean \"former motorcyclist?\""
+        },
+        {
+          "rank": 3,
+          "id": 4206,
+          "score": 9.526501,
+          "category": "rec.motorcycles",
+          "text": "I wanted to let people know that this motorcycle has been sold.\n\nThanks for your inquiries."
+        },
+        {
+          "rank": 4,
+          "id": 4007,
+          "score": 9.436097,
+          "category": "rec.motorcycles",
+          "text": "Huh?    Did this guy just invent wreck.motorcycles?\n\n\tCurious minds want to know."
+        },
+        {
+          "rank": 5,
+          "id": 302,
+          "score": 9.1656475,
+          "category": "rec.motorcycles",
+          "text": "Is it possible to do a \"wheelie\" on a motorcycle with shaft-drive?"
+        }
+      ]
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "collection": "capstone_raw_cosine",
+      "metric": "Cosine",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 1071,
+          "score": 0.3615652,
+          "category": "sci.space",
+          "text": "------------------------------------------------------------------------------\n\nOcean Reconnaissance Launch Surprises West\nSpace News, April 5-11, 1993, p.2\n[Excerpts]\n     Russia launched its first ocean reconnaissance satellite in 26 months \nMarch 30, confounding Western analysts who had proclaimed the program dead. \n     The Itar-TASS news agency announced the launch of Cosmos 2238 from \nPlesetsk Cosmodrome, but provided little description of the payload's mission. \n     However, based on the satellite's trajectory, Western observers \nidentified it as a military spacecraft designed to monitor electronic \nemissions from foreign naval ships in order to track their movement. \n     Geoff Perry of the Kettering Group in England... [said]  Western \nobservers had concluded that no more would be launched. But days after the \nlast [such] satellite re-entered the Earth's atmosphere, Cosmos 2238 was \nlaunched. \n\n\"Cosmos-2238\" Satellite Launched for Defense Ministry\nMoscow ITAR-TASS World Service in Russian  1238 GMT 30 March 1993\nTranslated in FBIS-SOV-93-060, p.27\nby ITAR-TASS correspondent Veronika Romanenkova\n     Moscow, 30 March -- The Cosmos-2238 satellite was launched at 1600 Moscow \ntime today from the Baykonur by a \"Tsiklon-M\" carrier rocket. An ITAR-TASS \ncorrespondent was told at the press center of Russia's space-military forces \nthat the satellite was launched in the interests of the Russian Defense \nMinistry."
+        },
+        {
+          "rank": 2,
+          "id": 5969,
+          "score": 0.3307094,
+          "category": "sci.space",
+          "text": "TRIAD, the first drag-free satellite, was designed and built by the \nJohns Hopkins Applied Physics Laboratory and launched 2 Sept 1972.  The \nsatellite was in three sections separated by two booms.  The central section \nhoused the DISCOS Disturbance Compensation System, which consisted of a proof \nmass of special non-magnetic alloy housed within a spherical cavity.  The \nproof mass flew a true gravitational orbit, free from drag and radiation \npressure.  Teflon microthrusters kept the body of the satellite centered \naround the proof mass, thereby flying the entire satellite drag free.\n\n     TRIAD was one of the APL-designed Navy Navigation Satellites.  The \n2nd-generation operational navigation satellites flying today (NOVA) use a \nsingle-axis version of DISCOS.  TRIAD was also the sixth APL satellite to be \npowered by an RTG (APL flew the first nuclear power supply in space, in 1961).\n\n     Further info on TRIAD, DISCOS, etc. can be found in \"Spacecraft Design \nInnovations in the APL Space Department,\" Johns Hopkins APL Technical Digest, \nVol. 13, No. 1 (1992)."
+        },
+        {
+          "rank": 3,
+          "id": 4312,
+          "score": 0.32240003,
+          "category": "sci.space",
+          "text": "There is a guy in NASA Johnson Space Center  that might answer \nyour question. I do not have his name right now but if you follow \nup I can dig that out for you.\n\nC.O.Egalon@larc.nasa.gov"
+        },
+        {
+          "rank": 4,
+          "id": 3836,
+          "score": 0.31843743,
+          "category": "sci.space",
+          "text": "Unfortunately, if you launch this from the US (or are a US citizen),\nyou will need a launch permit from the Office of Commercial Space\nTransportation, and I think it may be difficult to get a permit for\nan antisatellite weapon... :-)\n\nThe threshold at which OCST licensing kicks in is roughly 100km.\n(The rules are actually phrased in more complex ways, but that is\nthe result.)"
+        },
+        {
+          "rank": 5,
+          "id": 4840,
+          "score": 0.3172725,
+          "category": "sci.space",
+          "text": "As an Amateur Radio operator (VHF 2metres) I like to keep up with what is \ngoing up (and for that matter what is coming down too).\n \nIn about 30 days I have learned ALOT about satellites current, future and \npast all the way back to Vanguard series and up to Astro D observatory \n(space).  I borrowed a book from the library called Weater Satellites (I \nthink, it has a photo of the earth with a TIROS type satellite on it.)\n \nI would like to build a model or have a large color poster of one of the \nTIROS satellites I think there are places in the USA that sell them.\nITOS is my favorite looking satellite, followed by AmSat-OSCAR 13 \n(AO-13).\n \nTTYL\n73\nJim"
+        }
+      ]
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "collection": "capstone_raw_euclid",
+      "metric": "Euclid",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 1071,
+          "score": 6.0297737,
+          "category": "sci.space",
+          "text": "------------------------------------------------------------------------------\n\nOcean Reconnaissance Launch Surprises West\nSpace News, April 5-11, 1993, p.2\n[Excerpts]\n     Russia launched its first ocean reconnaissance satellite in 26 months \nMarch 30, confounding Western analysts who had proclaimed the program dead. \n     The Itar-TASS news agency announced the launch of Cosmos 2238 from \nPlesetsk Cosmodrome, but provided little description of the payload's mission. \n     However, based on the satellite's trajectory, Western observers \nidentified it as a military spacecraft designed to monitor electronic \nemissions from foreign naval ships in order to track their movement. \n     Geoff Perry of the Kettering Group in England... [said]  Western \nobservers had concluded that no more would be launched. But days after the \nlast [such] satellite re-entered the Earth's atmosphere, Cosmos 2238 was \nlaunched. \n\n\"Cosmos-2238\" Satellite Launched for Defense Ministry\nMoscow ITAR-TASS World Service in Russian  1238 GMT 30 March 1993\nTranslated in FBIS-SOV-93-060, p.27\nby ITAR-TASS correspondent Veronika Romanenkova\n     Moscow, 30 March -- The Cosmos-2238 satellite was launched at 1600 Moscow \ntime today from the Baykonur by a \"Tsiklon-M\" carrier rocket. An ITAR-TASS \ncorrespondent was told at the press center of Russia's space-military forces \nthat the satellite was launched in the interests of the Russian Defense \nMinistry."
+        },
+        {
+          "rank": 2,
+          "id": 5969,
+          "score": 6.097308,
+          "category": "sci.space",
+          "text": "TRIAD, the first drag-free satellite, was designed and built by the \nJohns Hopkins Applied Physics Laboratory and launched 2 Sept 1972.  The \nsatellite was in three sections separated by two booms.  The central section \nhoused the DISCOS Disturbance Compensation System, which consisted of a proof \nmass of special non-magnetic alloy housed within a spherical cavity.  The \nproof mass flew a true gravitational orbit, free from drag and radiation \npressure.  Teflon microthrusters kept the body of the satellite centered \naround the proof mass, thereby flying the entire satellite drag free.\n\n     TRIAD was one of the APL-designed Navy Navigation Satellites.  The \n2nd-generation operational navigation satellites flying today (NOVA) use a \nsingle-axis version of DISCOS.  TRIAD was also the sixth APL satellite to be \npowered by an RTG (APL flew the first nuclear power supply in space, in 1961).\n\n     Further info on TRIAD, DISCOS, etc. can be found in \"Spacecraft Design \nInnovations in the APL Space Department,\" Johns Hopkins APL Technical Digest, \nVol. 13, No. 1 (1992)."
+        },
+        {
+          "rank": 3,
+          "id": 4312,
+          "score": 6.1176376,
+          "category": "sci.space",
+          "text": "There is a guy in NASA Johnson Space Center  that might answer \nyour question. I do not have his name right now but if you follow \nup I can dig that out for you.\n\nC.O.Egalon@larc.nasa.gov"
+        },
+        {
+          "rank": 4,
+          "id": 4840,
+          "score": 6.1256356,
+          "category": "sci.space",
+          "text": "As an Amateur Radio operator (VHF 2metres) I like to keep up with what is \ngoing up (and for that matter what is coming down too).\n \nIn about 30 days I have learned ALOT about satellites current, future and \npast all the way back to Vanguard series and up to Astro D observatory \n(space).  I borrowed a book from the library called Weater Satellites (I \nthink, it has a photo of the earth with a TIROS type satellite on it.)\n \nI would like to build a model or have a large color poster of one of the \nTIROS satellites I think there are places in the USA that sell them.\nITOS is my favorite looking satellite, followed by AmSat-OSCAR 13 \n(AO-13).\n \nTTYL\n73\nJim"
+        },
+        {
+          "rank": 5,
+          "id": 3836,
+          "score": 6.1273265,
+          "category": "sci.space",
+          "text": "Unfortunately, if you launch this from the US (or are a US citizen),\nyou will need a launch permit from the Office of Commercial Space\nTransportation, and I think it may be difficult to get a permit for\nan antisatellite weapon... :-)\n\nThe threshold at which OCST licensing kicks in is roughly 100km.\n(The rules are actually phrased in more complex ways, but that is\nthe result.)"
+        }
+      ]
+    },
+    {
+      "query": "How do scientists launch satellites into orbit?",
+      "collection": "capstone_raw_dot",
+      "metric": "Dot",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 5871,
+          "score": 9.686306,
+          "category": "comp.sys.mac.hardware",
+          "text": "They don't move, to anybody much bigger than an electron :-)\n\nnoah"
+        },
+        {
+          "rank": 2,
+          "id": 4595,
+          "score": 8.040355,
+          "category": "sci.space",
+          "text": "Does anyone know how to size cold gas roll control thruster tanks\nfor sounding rockets?"
+        },
+        {
+          "rank": 3,
+          "id": 5520,
+          "score": 7.0708013,
+          "category": "talk.religion.misc",
+          "text": "Sunlight shining off of the ocean."
+        },
+        {
+          "rank": 4,
+          "id": 3915,
+          "score": 6.8728623,
+          "category": "comp.graphics",
+          "text": "Keywords:"
+        },
+        {
+          "rank": 5,
+          "id": 4314,
+          "score": 6.455117,
+          "category": "sci.space",
+          "text": "Sherzer Methodology!!!!!!"
+        }
+      ]
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "collection": "capstone_raw_cosine",
+      "metric": "Cosine",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 4499,
+          "score": 0.41959977,
+          "category": "sci.crypt",
+          "text": "I am eager to hear the legal theory behind restricting exchange of\ncryptographic data and encrypted messages, given the first admendment;\nthe theory behind regulating the *personal* encryption of one's personal\n*thoughts and feelings* seems even less tenable.\n\nPerhaps if we make a *treaty* with, say, Iceland, to restrict crypto\nparaphernalia can a good \"end run\" around the Constitution happen...\n(Treaties -- as someone pointed out -- has the force of any other \"law of\nthe land\".  Like the Bill of Rights.)\n\n\n    Amendment 1\n\n    Congress shall make no law respecting an establishment of religion, or\nprohibiting the free exercise thereof; or abridging the freedom of speech,\nor of the press; or the right of the people peaceably to assemble, and to\npetition the Government for a redress of grievances.\n\n    Amendment 2\n\n    A well regulated Militia, being necessary to the security of a free State,\nthe right of the people to keep and bear Arms, shall not be infringed.\n\n    Amendment 3\n\n    No Soldier shall, in time of peace be quartered in any house, without the\nconsent of the Owner, nor in time of war, but in a manner to be prescribed\nby law.\n\n    Amendment 4\n\n    The right of the people to be secure in their persons, houses, papers, and\neffects, against unreasonable searches and seizures, shall not be violated,\nand no Warrants shall issue, but upon probable cause, supported by Oath or\naffirmation, and particularly describing the place to be searched, and the\npersons or things to be seized.\n\n    Amendment 5\n\n    No person shall be held to answer for a capital, or otherwise infamous\ncrime, unless on a presentment or indictment of a Grand Jury, except in\ncases arising in the land or naval forces, or in the Militia, when in\nactual service in time of War or public danger; nor shall any person be\nsubject for the same offence to be twice put in jeopardy of life or limb;\nnor shall be compelled in any criminal case to be a witness against\nhimself, nor be deprived of life, liberty, or property, without due process\nof law; nor shall private property be taken for public use, without just\ncompensation.\n\n\nWell -- at least for a few minutes we had some privacy..."
+        },
+        {
+          "rank": 2,
+          "id": 1085,
+          "score": 0.41440573,
+          "category": "sci.crypt",
+          "text": "I have a bunch of questions about the encryption scheme\nreferenced in the Subject of this message.  What is the relative data\nprivacy provided by the above sequence as compared with straight DES?\nDoes the addition of compression then encrypting make the cyphertext\nsignificantly harder to crack using current methods than straight DES?\nWould running crypt after DES provide greater data privacy?  Is it\nimportant to remove the (constant) compress header before encryption?\nThank you, net, for your wisdom."
+        },
+        {
+          "rank": 3,
+          "id": 1556,
+          "score": 0.414061,
+          "category": "sci.crypt",
+          "text": "IMHO, encryption is (also) protected under the SECOND amendment of\nthe Constitution of the United States.\n\n\n\nI am not surprised that this administration is doing this.\nI could have told you so.\n\n\n\nPrivacy has ALWAYS been something that has the effect of restricting\nout ability to prosecute criminals.  We are supposed to have the\npresumption of innocence.\n\nI have the right to pull the curtains over my windows and close my\ndoor, and the police may not come in.  If I perform a crim in my home,\nthey will have to find out by means other than simply looking.\n\nEncryption is to my data as the window curtains are to my home.\nSimple enough?\n\n\n\nAnd yet the people vote for these people because they come out a lie\nto them about promising to fix things.\n\n\n\nYou mean they might have to go back to actually WORKING to do their job?\nOh heavens.\n\n\n\nPerhaps the FIRST amendment.  Definitely the SECOND and FIFTH.\n\n\n\nUnfortunately, the vast segments of the population are misinformed.\nThey just haven't appended -SR to the name of out country, yet.\n\n\n\nI seriously doubt that the NSA thinks that privacy and surveillance are\ncompatible.  I doubt of any smart person in any other agency thinks\nso, either.  The PROBLEM is that they simply hold PRIVACY to be of no\nvalue at all."
+        },
+        {
+          "rank": 4,
+          "id": 4686,
+          "score": 0.36826468,
+          "category": "sci.crypt",
+          "text": "Yes, but they'll be encrypted with Cripple Chip encryption, the\nencryption algorithm so great it's TOP SECRET and so unbreakable\nthey WON'T EVEN LET YOU LOOK AT IT!\n\nDoesn't that make you feel SECURE?"
+        },
+        {
+          "rank": 5,
+          "id": 4690,
+          "score": 0.36806646,
+          "category": "sci.crypt",
+          "text": "With E-Mail, if they can't break your PGP encryption, they'll just\ncall up one of their TEMPEST trucks and read the electromagnetic emmisions\nfrom your computer or terminal.  Note that measures to protect yourself from\nTEMPEST surveillance are still classified, as far as I know.\n\n\n\tIf the new regime comes to fruition, make sure you protect your First\nAmendment rights by asserting your Second Amendment Rights."
+        }
+      ]
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "collection": "capstone_raw_euclid",
+      "metric": "Euclid",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 1085,
+          "score": 6.249475,
+          "category": "sci.crypt",
+          "text": "I have a bunch of questions about the encryption scheme\nreferenced in the Subject of this message.  What is the relative data\nprivacy provided by the above sequence as compared with straight DES?\nDoes the addition of compression then encrypting make the cyphertext\nsignificantly harder to crack using current methods than straight DES?\nWould running crypt after DES provide greater data privacy?  Is it\nimportant to remove the (constant) compress header before encryption?\nThank you, net, for your wisdom."
+        },
+        {
+          "rank": 2,
+          "id": 1556,
+          "score": 6.3034286,
+          "category": "sci.crypt",
+          "text": "IMHO, encryption is (also) protected under the SECOND amendment of\nthe Constitution of the United States.\n\n\n\nI am not surprised that this administration is doing this.\nI could have told you so.\n\n\n\nPrivacy has ALWAYS been something that has the effect of restricting\nout ability to prosecute criminals.  We are supposed to have the\npresumption of innocence.\n\nI have the right to pull the curtains over my windows and close my\ndoor, and the police may not come in.  If I perform a crim in my home,\nthey will have to find out by means other than simply looking.\n\nEncryption is to my data as the window curtains are to my home.\nSimple enough?\n\n\n\nAnd yet the people vote for these people because they come out a lie\nto them about promising to fix things.\n\n\n\nYou mean they might have to go back to actually WORKING to do their job?\nOh heavens.\n\n\n\nPerhaps the FIRST amendment.  Definitely the SECOND and FIFTH.\n\n\n\nUnfortunately, the vast segments of the population are misinformed.\nThey just haven't appended -SR to the name of out country, yet.\n\n\n\nI seriously doubt that the NSA thinks that privacy and surveillance are\ncompatible.  I doubt of any smart person in any other agency thinks\nso, either.  The PROBLEM is that they simply hold PRIVACY to be of no\nvalue at all."
+        },
+        {
+          "rank": 3,
+          "id": 4499,
+          "score": 6.329489,
+          "category": "sci.crypt",
+          "text": "I am eager to hear the legal theory behind restricting exchange of\ncryptographic data and encrypted messages, given the first admendment;\nthe theory behind regulating the *personal* encryption of one's personal\n*thoughts and feelings* seems even less tenable.\n\nPerhaps if we make a *treaty* with, say, Iceland, to restrict crypto\nparaphernalia can a good \"end run\" around the Constitution happen...\n(Treaties -- as someone pointed out -- has the force of any other \"law of\nthe land\".  Like the Bill of Rights.)\n\n\n    Amendment 1\n\n    Congress shall make no law respecting an establishment of religion, or\nprohibiting the free exercise thereof; or abridging the freedom of speech,\nor of the press; or the right of the people peaceably to assemble, and to\npetition the Government for a redress of grievances.\n\n    Amendment 2\n\n    A well regulated Militia, being necessary to the security of a free State,\nthe right of the people to keep and bear Arms, shall not be infringed.\n\n    Amendment 3\n\n    No Soldier shall, in time of peace be quartered in any house, without the\nconsent of the Owner, nor in time of war, but in a manner to be prescribed\nby law.\n\n    Amendment 4\n\n    The right of the people to be secure in their persons, houses, papers, and\neffects, against unreasonable searches and seizures, shall not be violated,\nand no Warrants shall issue, but upon probable cause, supported by Oath or\naffirmation, and particularly describing the place to be searched, and the\npersons or things to be seized.\n\n    Amendment 5\n\n    No person shall be held to answer for a capital, or otherwise infamous\ncrime, unless on a presentment or indictment of a Grand Jury, except in\ncases arising in the land or naval forces, or in the Militia, when in\nactual service in time of War or public danger; nor shall any person be\nsubject for the same offence to be twice put in jeopardy of life or limb;\nnor shall be compelled in any criminal case to be a witness against\nhimself, nor be deprived of life, liberty, or property, without due process\nof law; nor shall private property be taken for public use, without just\ncompensation.\n\n\nWell -- at least for a few minutes we had some privacy..."
+        },
+        {
+          "rank": 4,
+          "id": 4690,
+          "score": 6.342711,
+          "category": "sci.crypt",
+          "text": "With E-Mail, if they can't break your PGP encryption, they'll just\ncall up one of their TEMPEST trucks and read the electromagnetic emmisions\nfrom your computer or terminal.  Note that measures to protect yourself from\nTEMPEST surveillance are still classified, as far as I know.\n\n\n\tIf the new regime comes to fruition, make sure you protect your First\nAmendment rights by asserting your Second Amendment Rights."
+        },
+        {
+          "rank": 5,
+          "id": 4686,
+          "score": 6.3580275,
+          "category": "sci.crypt",
+          "text": "Yes, but they'll be encrypted with Cripple Chip encryption, the\nencryption algorithm so great it's TOP SECRET and so unbreakable\nthey WON'T EVEN LET YOU LOOK AT IT!\n\nDoesn't that make you feel SECURE?"
+        }
+      ]
+    },
+    {
+      "query": "How does encryption protect private messages?",
+      "collection": "capstone_raw_dot",
+      "metric": "Dot",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 3973,
+          "score": 9.894737,
+          "category": "rec.sport.hockey",
+          "text": "It's only test message."
+        },
+        {
+          "rank": 2,
+          "id": 4686,
+          "score": 7.458459,
+          "category": "sci.crypt",
+          "text": "Yes, but they'll be encrypted with Cripple Chip encryption, the\nencryption algorithm so great it's TOP SECRET and so unbreakable\nthey WON'T EVEN LET YOU LOOK AT IT!\n\nDoesn't that make you feel SECURE?"
+        },
+        {
+          "rank": 3,
+          "id": 1121,
+          "score": 7.3501844,
+          "category": "comp.sys.ibm.pc.hardware",
+          "text": "Is there anybody who has (or can point me in the right direction) any\ninformation about protected mode? Also interested in protected mode viewed from\na OS point of view."
+        },
+        {
+          "rank": 4,
+          "id": 4690,
+          "score": 6.5252132,
+          "category": "sci.crypt",
+          "text": "With E-Mail, if they can't break your PGP encryption, they'll just\ncall up one of their TEMPEST trucks and read the electromagnetic emmisions\nfrom your computer or terminal.  Note that measures to protect yourself from\nTEMPEST surveillance are still classified, as far as I know.\n\n\n\tIf the new regime comes to fruition, make sure you protect your First\nAmendment rights by asserting your Second Amendment Rights."
+        },
+        {
+          "rank": 5,
+          "id": 1258,
+          "score": 6.4225545,
+          "category": "sci.crypt",
+          "text": "What is the status of cruptology for private citizens throughout the\nworld? or, more clearly, is there a listing of countries and their\npolicies on citizens encrypting electronic data?  \n\nI'm curious how the Europeans handle this, for instance."
+        }
+      ]
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "collection": "capstone_raw_cosine",
+      "metric": "Cosine",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 2777,
+          "score": 0.561305,
+          "category": "rec.sport.hockey",
+          "text": ": \n: Of course, penalties will have to be changed:\n: \n: Roughing:\tChauvanistic Males Being Aggressive\n: Slashing:\tChauvanistic Males Venting Frustration\n: Fighting:\tProof That Males Cannot Cope With Their Feelings\n: \n\nNO NO NO! since all the penalties fall into three classes, there should\nonly be three penalties:\n\n1. Foul (Any illegal contact with the other player or his stick with your\n   body or stick). If you get 5 you are out for the game.\n\n2. Unsportsmanlike contact. (An intentional foul). This inlcludes all the\n   current flavours of roughing, fighting and boarding. If you get two you\n   are thrown out of the game, and fined.\n\n3. Technical foul. Bad mouthing the ref, by player or coach. Penalty shot\n   is awarded. Two and you are thrown out of the game.\n\nBesides the penalty shot for one technical, if the team gets 5 penalties\nin a period, the opposing team gets a penalty shot for every additional one,\nuntil the end of the period. The victim gets two shots if he/she was in\nthe act of shooting when the foul ocured.\n\nThis works well for several reasons. First, penalty shots are the most\nexciting thing in hockey, right? So, it follows that the more the better.\nNext, when the player is setting up for a penalty shot, the network can\ntake a commercial. Finally, with only three penalties, the network\nannouncers (Don Meredith, Dick Vitale, John Madden, Pat Summerall, and\nMarv Levy, among others) will be able to tell the viewers what happened before\nthe PA announcer says it.\n\nOh, one other rule. When a goal is scored (10-20 times a period), the play\ncannot resume until the PA announcer announces it. This way, the network\ncan sneak in a few more commercials. Then, once the PA announcer has told\nthem who scored, the TV announcer can tell you the viewer, and even have a \nchance of pronouncing his name right.\n\nSeriously, though, I actually went to see a NBA basketball game last week,\nfor the first time in my life. I was amazed how boring it was. The play is\nso slow they actually had fans come out for things like free-throw shooting\ncontests DURING THE PERIOD!. Of course the 'Laker Girls' get to do their \nroutines at least 6-8 times during the game, and not just between periods\neither. There is a whistle every 30 seconds on average, maybe less. The\ngame is 48 minutes, with 2 minutes between quarters 1-2 and 3-4 and a\n10 minute halftime, and it still takes over 2 hours.\n\nThe reason for this has to be TV. There is plenty of room to throw in\ncommercials, and have the announcer jabber while nothing else is happening.\nOn TV, basketball is fairly entertaining, IMHO. But, it is better to watch\nit on TV than to be there. If this is the road the NHL is following, then\nit truly is a sad day.\n\nEnough for now."
+        },
+        {
+          "rank": 2,
+          "id": 864,
+          "score": 0.43432283,
+          "category": "rec.sport.hockey",
+          "text": "I was under the impression that the objective is to find conclusive\nevidence that the puck _did_ cross the line.  And, the replays I saw showed \nfairly conclusively that the puck did _not_ cross the goal line at any\ntime anyway.  Somebody screwed up."
+        },
+        {
+          "rank": 3,
+          "id": 1916,
+          "score": 0.4295553,
+          "category": "rec.sport.hockey",
+          "text": "I AM an Ulf (and Pgh) fan, and what pisses me off about the whole Adam Graves/\nUlf Samuesson debate is that Ulf plays hard-hitting hockey (nothing wrong with \nthat) while Graves does what he does when the only way to win a game is to \nintentionally hurt someone (which bites!).\n\n\nI thought they had instituted all kinds of new rules this season to stop crap \nlike that?!?  Is it just me, or does the officiating just still stink to high\nheaven?  IMHO, if they could get rid of the existing refs, and institute a new\nsystem with more than one ref on the ice to keep an eye on the trouble-makers\nthen a lot of these things would stop, and then the game would be ruled by the\nfinnesse players:  Mario, Selanne, Bure, Messier, et.al..."
+        },
+        {
+          "rank": 4,
+          "id": 4751,
+          "score": 0.42870522,
+          "category": "rec.sport.hockey",
+          "text": "Does anyone out there have the shorthanded goal totals of the NHL players\nfor this season?  We're trying to finish our rotisserie stats and need SHG\nto make it complete."
+        },
+        {
+          "rank": 5,
+          "id": 3167,
+          "score": 0.41936558,
+          "category": "rec.sport.hockey",
+          "text": "I thought the red light went on...thus, in the review, the presumption\nwould be to find conclusive evidence that the puck did not go in the\nnet...from the replays I say, even from the rear, the evidence wasn't\nconclusive that the puck was in or out...in my opinion..."
+        }
+      ]
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "collection": "capstone_raw_euclid",
+      "metric": "Euclid",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 2777,
+          "score": 5.210912,
+          "category": "rec.sport.hockey",
+          "text": ": \n: Of course, penalties will have to be changed:\n: \n: Roughing:\tChauvanistic Males Being Aggressive\n: Slashing:\tChauvanistic Males Venting Frustration\n: Fighting:\tProof That Males Cannot Cope With Their Feelings\n: \n\nNO NO NO! since all the penalties fall into three classes, there should\nonly be three penalties:\n\n1. Foul (Any illegal contact with the other player or his stick with your\n   body or stick). If you get 5 you are out for the game.\n\n2. Unsportsmanlike contact. (An intentional foul). This inlcludes all the\n   current flavours of roughing, fighting and boarding. If you get two you\n   are thrown out of the game, and fined.\n\n3. Technical foul. Bad mouthing the ref, by player or coach. Penalty shot\n   is awarded. Two and you are thrown out of the game.\n\nBesides the penalty shot for one technical, if the team gets 5 penalties\nin a period, the opposing team gets a penalty shot for every additional one,\nuntil the end of the period. The victim gets two shots if he/she was in\nthe act of shooting when the foul ocured.\n\nThis works well for several reasons. First, penalty shots are the most\nexciting thing in hockey, right? So, it follows that the more the better.\nNext, when the player is setting up for a penalty shot, the network can\ntake a commercial. Finally, with only three penalties, the network\nannouncers (Don Meredith, Dick Vitale, John Madden, Pat Summerall, and\nMarv Levy, among others) will be able to tell the viewers what happened before\nthe PA announcer says it.\n\nOh, one other rule. When a goal is scored (10-20 times a period), the play\ncannot resume until the PA announcer announces it. This way, the network\ncan sneak in a few more commercials. Then, once the PA announcer has told\nthem who scored, the TV announcer can tell you the viewer, and even have a \nchance of pronouncing his name right.\n\nSeriously, though, I actually went to see a NBA basketball game last week,\nfor the first time in my life. I was amazed how boring it was. The play is\nso slow they actually had fans come out for things like free-throw shooting\ncontests DURING THE PERIOD!. Of course the 'Laker Girls' get to do their \nroutines at least 6-8 times during the game, and not just between periods\neither. There is a whistle every 30 seconds on average, maybe less. The\ngame is 48 minutes, with 2 minutes between quarters 1-2 and 3-4 and a\n10 minute halftime, and it still takes over 2 hours.\n\nThe reason for this has to be TV. There is plenty of room to throw in\ncommercials, and have the announcer jabber while nothing else is happening.\nOn TV, basketball is fairly entertaining, IMHO. But, it is better to watch\nit on TV than to be there. If this is the road the NHL is following, then\nit truly is a sad day.\n\nEnough for now."
+        },
+        {
+          "rank": 2,
+          "id": 864,
+          "score": 5.4277716,
+          "category": "rec.sport.hockey",
+          "text": "I was under the impression that the objective is to find conclusive\nevidence that the puck _did_ cross the line.  And, the replays I saw showed \nfairly conclusively that the puck did _not_ cross the goal line at any\ntime anyway.  Somebody screwed up."
+        },
+        {
+          "rank": 3,
+          "id": 1916,
+          "score": 5.4448404,
+          "category": "rec.sport.hockey",
+          "text": "I AM an Ulf (and Pgh) fan, and what pisses me off about the whole Adam Graves/\nUlf Samuesson debate is that Ulf plays hard-hitting hockey (nothing wrong with \nthat) while Graves does what he does when the only way to win a game is to \nintentionally hurt someone (which bites!).\n\n\nI thought they had instituted all kinds of new rules this season to stop crap \nlike that?!?  Is it just me, or does the officiating just still stink to high\nheaven?  IMHO, if they could get rid of the existing refs, and institute a new\nsystem with more than one ref on the ice to keep an eye on the trouble-makers\nthen a lot of these things would stop, and then the game would be ruled by the\nfinnesse players:  Mario, Selanne, Bure, Messier, et.al..."
+        },
+        {
+          "rank": 4,
+          "id": 3167,
+          "score": 5.4721594,
+          "category": "rec.sport.hockey",
+          "text": "I thought the red light went on...thus, in the review, the presumption\nwould be to find conclusive evidence that the puck did not go in the\nnet...from the replays I say, even from the rear, the evidence wasn't\nconclusive that the puck was in or out...in my opinion..."
+        },
+        {
+          "rank": 5,
+          "id": 1367,
+          "score": 5.4910154,
+          "category": "rec.sport.baseball",
+          "text": "I'm not sure I understand this question. When the IF rule is invoked,\nthe batter is automatically out. This relieves the runners from being\nforced to advance to the next base if the ball is not caught. Other\nthan that, isn't it just the same as any situation in which a runner on\na base is not forced to the next base on a dropped fly ball? That is,\nif the ball is caught he can tag up and run (or decide to stay), and\nif the ball is dropped he can have left the base at any time."
+        }
+      ]
+    },
+    {
+      "query": "What are the rules for a player being offside in hockey?",
+      "collection": "capstone_raw_dot",
+      "metric": "Dot",
+      "exact": true,
+      "matches": [
+        {
+          "rank": 1,
+          "id": 4823,
+          "score": 10.510885,
+          "category": "rec.sport.baseball",
+          "text": "First game, first at bat."
+        },
+        {
+          "rank": 2,
+          "id": 870,
+          "score": 10.45059,
+          "category": "rec.sport.hockey",
+          "text": "Could someone please post the rosters for the College Hockey All-Star game East\nand West Rosters?  Thanks in advance."
+        },
+        {
+          "rank": 3,
+          "id": 4751,
+          "score": 9.747954,
+          "category": "rec.sport.hockey",
+          "text": "Does anyone out there have the shorthanded goal totals of the NHL players\nfor this season?  We're trying to finish our rotisserie stats and need SHG\nto make it complete."
+        },
+        {
+          "rank": 4,
+          "id": 5512,
+          "score": 9.114538,
+          "category": "rec.sport.hockey",
+          "text": "boards injuring his shoulder and they blotted out the injury report.\n\nThe Wings player was Yves Racine, and he returned later in that same period."
+        },
+        {
+          "rank": 5,
+          "id": 2927,
+          "score": 8.389717,
+          "category": "rec.sport.baseball",
+          "text": "anyone know the outcome of tonight's jays game?\n-home runs?\n-winning pitcher?"
+        }
+      ]
+    }
+  ]
+}
