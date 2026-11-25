@@ -1,0 +1,334 @@
+{
+  "id": "QdrantBenchN8N01",
+  "name": "Qdrant Capstone | Reproduce Benchmarks",
+  "active": false,
+  "nodes": [
+    {
+      "name": "Run Benchmarks",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {},
+      "id": "237c18ea-db82-5523-b0a5-f6f8b10cbdcf"
+    },
+    {
+      "name": "Sample 6,000 Newsgroup Documents",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/sample",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "92a83410-4b19-5eca-97a4-e0205be2b2aa"
+    },
+    {
+      "name": "Embed Documents with MiniLM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/embed",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "3e841068-28fc-5077-b23c-104db7b8b56c"
+    },
+    {
+      "name": "Populate Normalized Metric Collections",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/normalized-collections",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "d060abf8-a0cb-588d-9fd7-bf657b926f92"
+    },
+    {
+      "name": "Embed Queries and Compare Exact Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/normalized-metrics",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "ac96ac8f-4055-59f6-ba97-261dda3853c8"
+    },
+    {
+      "name": "Build and Verify Both HNSW Graphs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        220
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/hnsw-setup",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "da0bd554-28f6-5513-aa76-3169a7c9e677"
+    },
+    {
+      "name": "Benchmark Exact Search and HNSW",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        220
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/hnsw-benchmark",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "2eb2acc8-f02b-5b94-9bd1-6a53454b7a77"
+    },
+    {
+      "name": "Build and Verify the IVF Index",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        220
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/ivf-setup",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "fdc546a0-e7bd-52ab-bb98-d61869c4b6f0"
+    },
+    {
+      "name": "Benchmark IVF Against Exact Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        220
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/ivf-benchmark",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "d852aab0-21af-59f5-a9f7-25c6db5035fc"
+    },
+    {
+      "name": "Embed Documents and Queries Without Normalization",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        220
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/raw-embed",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "bb08381f-1daf-5f8b-adf2-0cd78c08750e"
+    },
+    {
+      "name": "Populate Raw Collections and Compare Exact Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        440
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/raw-metrics",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { run_id: $execution.id } }}",
+        "options": {
+          "timeout": 3660000
+        }
+      },
+      "id": "003be2f0-3b9a-5069-8b06-11b7b9a27370"
+    }
+  ],
+  "connections": {
+    "Run Benchmarks": {
+      "main": [
+        [
+          {
+            "node": "Sample 6,000 Newsgroup Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample 6,000 Newsgroup Documents": {
+      "main": [
+        [
+          {
+            "node": "Embed Documents with MiniLM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Documents with MiniLM": {
+      "main": [
+        [
+          {
+            "node": "Populate Normalized Metric Collections",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Populate Normalized Metric Collections": {
+      "main": [
+        [
+          {
+            "node": "Embed Queries and Compare Exact Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Queries and Compare Exact Metrics": {
+      "main": [
+        [
+          {
+            "node": "Build and Verify Both HNSW Graphs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build and Verify Both HNSW Graphs": {
+      "main": [
+        [
+          {
+            "node": "Benchmark Exact Search and HNSW",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Benchmark Exact Search and HNSW": {
+      "main": [
+        [
+          {
+            "node": "Build and Verify the IVF Index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build and Verify the IVF Index": {
+      "main": [
+        [
+          {
+            "node": "Benchmark IVF Against Exact Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Benchmark IVF Against Exact Search": {
+      "main": [
+        [
+          {
+            "node": "Embed Documents and Queries Without Normalization",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed Documents and Queries Without Normalization": {
+      "main": [
+        [
+          {
+            "node": "Populate Raw Collections and Compare Exact Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

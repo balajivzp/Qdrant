@@ -1,6 +1,9 @@
+import argparse
 import json
 import re
-import argparse
+import sys
+from contextlib import redirect_stdout
+
 import joblib
 
 from compare_raw_metrics import COLLECTIONS as RAW_COLLECTIONS
@@ -103,10 +106,23 @@ def run_demo(query_number):
 
     print(f"\nQuery {query_number}: {query}")
 
-    def show(label, ids, scores, ground_truth=None):
+    groups = []
+
+    def show(label, ids, scores, ground_truth=None, candidate_count=None):
+        group = {
+            "method": label,
+            "matches": [
+                {"rank": rank, "id": point_id, "score": score}
+                for rank, (point_id, score) in enumerate(zip(ids, scores), 1)
+            ],
+        }
+        groups.append(group)
+        if candidate_count is not None:
+            group["candidate_count"] = candidate_count
         print(f"\n{label}")
         if ground_truth is not None:
             overlap = len(set(ids) & ground_truth) / 5
+            group["overlap_at_5"] = overlap
             print(f"Overlap with normalized exact search: {overlap:.0%}")
 
         for rank, (point_id, score) in enumerate(zip(ids, scores), 1):
@@ -187,9 +203,13 @@ def run_demo(query_number):
                 result["ids"],
                 result["scores"],
                 ground_truth,
+                candidate_count=result["candidate_count"],
             )
     finally:
         client.close()
+
+    return {"query_number": query_number, "query": query, "results": groups}
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -199,9 +219,16 @@ if __name__ == "__main__":
         choices=range(1, 6),
         help="Run all methods for one saved query, numbered 1–5.",
     )
+    parser.add_argument("--json", action="store_true", help="Emit the live demo as JSON")
     args = parser.parse_args()
+    if args.json and args.query_number is None:
+        parser.error("--json requires --query-number")
 
     if args.query_number is None:
         main()
+    elif args.json:
+        with redirect_stdout(sys.stderr):
+            result = run_demo(args.query_number)
+        print(json.dumps(result, ensure_ascii=False))
     else:
         run_demo(args.query_number)
