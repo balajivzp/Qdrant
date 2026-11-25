@@ -25,6 +25,8 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+# For a fresh checkout; preserve an existing .env.
+test -f .env || cp .env.example .env
 docker compose up -d
 docker compose ps
 curl --fail http://localhost:6333/
@@ -41,30 +43,46 @@ The Compose mount persists collections in `qdrant_storage/`. Stop the service
 with `docker compose down`; restart it with `docker compose up -d`. The
 mounted data remains on disk.
 
+## Code layout and environment settings
+
+Python code lives in the `qdrant_capstone/` package, grouped into `data/`,
+`embeddings/`, `indexes/`, `search/`, `benchmarks/`, and `integrations/`.
+Run entry points with `python -m` from the repository root as shown below.
+The `n8n/` directory contains workflow definitions and their documentation.
+Artifacts and result files continue to use the repository's existing paths.
+
+Shared configuration in `qdrant_capstone/config.py` loads the root `.env` file.
+Set `QDRANT_URL` there and, for a server that requires authentication,
+`QDRANT_API_KEY`. The default local Docker server requires no API key.
+`GEMINI_API_KEY` is optional and is not used by the local embedding benchmarks.
+Existing shell environment variables take precedence over `.env` values.
+Keep real credentials in `.env` or `.env.*` files, which Git ignores; commit
+only placeholder values in `.env.example`.
+
 ## Reproduce the experiments
 
 Run these commands in order, allowing each command to finish successfully:
 
 ```bash
 # Prepare the reproducible text sample and normalized document embeddings.
-python data.py
-python embed.py
+python -m qdrant_capstone.data.prepare
+python -m qdrant_capstone.embeddings.normalized
 
 # Create three metric collections, embed the five queries, and run exact search.
-python qdrant_setup.py
-python compare.py
+python -m qdrant_capstone.indexes.collections
+python -m qdrant_capstone.search.compare
 
 # Build the two HNSW graphs and measure their overlap and latency.
-python setup_hnsw.py
-python benchmark_hnsw.py
+python -m qdrant_capstone.indexes.hnsw
+python -m qdrant_capstone.benchmarks.hnsw
 
 # Build the custom IVF index and benchmark two search budgets.
-python ivf.py
-python benchmark_ivf.py
+python -m qdrant_capstone.indexes.ivf
+python -m qdrant_capstone.benchmarks.ivf
 
 # Repeat the metric comparison with naturally varying vector magnitudes.
-python embed_raw.py
-python compare_raw_metrics.py
+python -m qdrant_capstone.embeddings.raw
+python -m qdrant_capstone.search.raw_metrics
 ```
 
 The first downloads and document embedding runs take longer than subsequent
@@ -72,10 +90,10 @@ searches. Embeddings, model cache, and the IVF index are saved in `artifacts/`.
 This directory and `qdrant_storage/` are ignored by Git; a fresh checkout
 regenerates them using the commands above.
 
-`compare.py` without arguments creates the saved query embeddings required
+`qdrant_capstone/search/compare.py` without arguments creates the saved query embeddings required
 by later scripts. If you change the dataset, model, or query order, regenerate
 the dependent embeddings, collections, indexes, and benchmark results together.
-`setup_hnsw.py` skips uploads to populated collections and checks their counts;
+`qdrant_capstone/indexes/hnsw.py` skips uploads to populated collections and checks their counts;
 it assumes those collections contain the same dataset.
 
 The scripts target the `capstone_*` collection names and leave unrelated
@@ -90,7 +108,7 @@ After completing setup, run:
 ```bash
 source .venv/bin/activate
 docker compose up -d
-python compare.py --query-number 2
+python -m qdrant_capstone.search.compare --query-number 2
 ```
 
 Choose any query number from 1 through 5. The demo uses cached embeddings for
@@ -113,17 +131,17 @@ Euclidean, and 5685 for dot product. IVF finds 40% of the exact top five at
 
 | File | Purpose or output |
 |---|---|
-| `data.py` | Load, clean, and sample documents; save `artifacts/documents.json` |
-| `embed.py` | Save `vectors.npy` and the aligned `vector_ids.npy` in `artifacts/` |
+| `qdrant_capstone/data/prepare.py` | Load, clean, and sample documents; save `artifacts/documents.json` |
+| `qdrant_capstone/embeddings/normalized.py` | Save `vectors.npy` and the aligned `vector_ids.npy` in `artifacts/` |
 | `queries.md` | Five numbered natural-language queries |
-| `qdrant_setup.py` | Populate normalized Cosine, Euclidean, and Dot collections |
-| `compare.py` | Generate cached queries and metric results, or run the live demo |
-| `setup_hnsw.py` | Prepare normal and weak cosine HNSW collections |
-| `benchmark_hnsw.py` | Save `results/hnsw.json` |
-| `ivf.py` | Implement clustering and candidate search; save `artifacts/ivf_index.joblib` |
-| `benchmark_ivf.py` | Save `results/ivf.json` using saved Qdrant exact IDs as ground truth |
-| `embed_raw.py` | Save document and query embeddings with the final Normalize layer removed |
-| `compare_raw_metrics.py` | Populate separate raw-vector collections and save their exact results |
+| `qdrant_capstone/indexes/collections.py` | Populate normalized Cosine, Euclidean, and Dot collections |
+| `qdrant_capstone/search/compare.py` | Generate cached queries and metric results, or run the live demo |
+| `qdrant_capstone/indexes/hnsw.py` | Prepare normal and weak cosine HNSW collections |
+| `qdrant_capstone/benchmarks/hnsw.py` | Save `results/hnsw.json` |
+| `qdrant_capstone/indexes/ivf.py` | Implement clustering and candidate search; save `artifacts/ivf_index.joblib` |
+| `qdrant_capstone/benchmarks/ivf.py` | Save `results/ivf.json` using saved Qdrant exact IDs as ground truth |
+| `qdrant_capstone/embeddings/raw.py` | Save document and query embeddings with the final Normalize layer removed |
+| `qdrant_capstone/search/raw_metrics.py` | Populate separate raw-vector collections and save their exact results |
 | `results/distance_metrics.json` | Exact top-five results with normalized embeddings |
 | `results/distance_metrics_raw.json` | Exact top-five results with unnormalized embeddings |
 | `comparison.md` | Combined measurements and explanations |
@@ -181,6 +199,6 @@ Be able to explain each script and these observations in your own words:
 - Connection refused: start Docker Desktop and run `docker compose up -d`.
   Inspect `docker compose logs --tail=50 qdrant` if startup fails.
 - Missing artifact files: follow the reproduction sequence in order.
-- HNSW readiness assertions: run `python setup_hnsw.py` and let indexing finish.
+- HNSW readiness assertions: run `python -m qdrant_capstone.indexes.hnsw` and let indexing finish.
 - PyTorch's macOS redirect message is informational. Check for a subsequent
   traceback and confirm the script produces its expected output.

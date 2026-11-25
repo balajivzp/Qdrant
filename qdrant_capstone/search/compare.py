@@ -6,16 +6,16 @@ from contextlib import redirect_stdout
 
 import joblib
 
-from compare_raw_metrics import COLLECTIONS as RAW_COLLECTIONS
-from ivf import search_ivf
-from setup_hnsw import CONFIGS
+from qdrant_capstone.search.raw_metrics import COLLECTIONS as RAW_COLLECTIONS
+from qdrant_capstone.indexes.ivf import search_ivf
+from qdrant_capstone.indexes.hnsw import CONFIGS
 
 import numpy as np
-from qdrant_client import QdrantClient, models
+from qdrant_client import models
 from sentence_transformers import SentenceTransformer
 
-from embed import ARTIFACTS, MODEL_NAME, ROOT
-from qdrant_setup import COLLECTIONS
+from qdrant_capstone.config import create_qdrant_client, ARTIFACTS, MODEL_NAME, ROOT
+from qdrant_capstone.indexes.collections import COLLECTIONS
 
 def main():
     query_text = (ROOT / "queries.md").read_text(encoding="utf-8")
@@ -41,7 +41,7 @@ def main():
         encoding="utf-8"
     )
 
-    client = QdrantClient(url="http://localhost:6333", timeout=60)
+    client = create_qdrant_client()
     results = []
 
     for query, vector in zip(queries, query_vector):
@@ -128,7 +128,7 @@ def run_demo(query_number):
         for rank, (point_id, score) in enumerate(zip(ids, scores), 1):
             print(f"  {rank}. ID={point_id}, score={score:.6f}")
 
-    client = QdrantClient(url="http://localhost:6333", timeout=60)
+    client = create_qdrant_client()
 
     try:
         for collection in CONFIGS:

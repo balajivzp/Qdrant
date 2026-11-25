@@ -3,10 +3,10 @@ from statistics import mean, median
 from time import perf_counter
 
 import numpy as np
-from qdrant_client import QdrantClient, models
+from qdrant_client import models
 
-from embed import ARTIFACTS, ROOT
-from setup_hnsw import CONFIGS
+from qdrant_capstone.config import create_qdrant_client, ARTIFACTS, ROOT
+from qdrant_capstone.indexes.hnsw import CONFIGS
 
 
 def measure(client, collection, vector, params):
@@ -39,7 +39,7 @@ def main():
     vectors = np.load(ARTIFACTS / "query_vectors.npy")
     assert vectors.shape == (len(queries), 384)
 
-    client = QdrantClient(url="http://localhost:6333", timeout=60)
+    client = create_qdrant_client()
 
     for collection in CONFIGS:
         info = client.get_collection(collection)

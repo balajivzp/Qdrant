@@ -1,12 +1,9 @@
 import json
-from pathlib import Path
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-ROOT = Path(__file__).resolve().parent
-ARTIFACTS = ROOT / "artifacts"
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+from qdrant_capstone.config import ARTIFACTS, MODEL_NAME
 
 def main():
     documents = json.loads(

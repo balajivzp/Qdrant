@@ -5,8 +5,8 @@ from time import perf_counter
 import joblib
 import numpy as np
 
-from ivf import search_ivf
-from qdrant_setup import ARTIFACTS, ROOT
+from qdrant_capstone.indexes.ivf import search_ivf
+from qdrant_capstone.config import ARTIFACTS, ROOT
 
 
 def main():

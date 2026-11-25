@@ -11,7 +11,7 @@ From the repository root, with the [project prerequisites](../README.md#requirem
 installed and Qdrant running on port 6333:
 
 ```bash
-.venv/bin/python n8n/worker.py
+.venv/bin/python -m qdrant_capstone.integrations.n8n_worker
 ```
 
 Keep the worker running while using the workflows. It listens on

@@ -2,9 +2,9 @@ import json
 import time
 
 import numpy as np
-from qdrant_client import QdrantClient, models
+from qdrant_client import models
 
-from qdrant_setup import ARTIFACTS
+from qdrant_capstone.config import create_qdrant_client, ARTIFACTS
 
 CONFIGS = {
     "capstone_cosine": {"m": 16, "ef_construct": 100},
@@ -27,7 +27,7 @@ def main():
         for doc in documents
     ]
 
-    client = QdrantClient(url="http://localhost:6333", timeout=60)
+    client = create_qdrant_client()
 
     for name, settings in CONFIGS.items():
         hnsw = models.HnswConfigDiff(

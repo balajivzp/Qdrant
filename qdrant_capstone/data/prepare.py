@@ -1,11 +1,9 @@
 import json
 from collections import Counter
-from pathlib import Path
 
 from sklearn.datasets import fetch_20newsgroups
 
-ROOT = Path(__file__).resolve().parent
-ARTIFACTS = ROOT / "artifacts"
+from qdrant_capstone.config import ARTIFACTS
 
 def load_documents(sample_size=6000):
       dataset = fetch_20newsgroups(

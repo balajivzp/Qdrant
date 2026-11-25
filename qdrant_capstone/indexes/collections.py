@@ -1,11 +1,9 @@
 import json
-from pathlib import Path
 
 import numpy as np
-from qdrant_client import QdrantClient, models
+from qdrant_client import models
 
-ROOT = Path(__file__).resolve().parent
-ARTIFACTS = ROOT / "artifacts"
+from qdrant_capstone.config import create_qdrant_client, ARTIFACTS
 
 COLLECTIONS = {
     "capstone_cosine" : models.Distance.COSINE,
@@ -30,7 +28,7 @@ def main():
         for doc in documents
     ]
 
-    client = QdrantClient(url="http://localhost:6333",timeout=60)
+    client = create_qdrant_client()
 
     for name, distance in COLLECTIONS.items():
         if not client.collection_exists(name):

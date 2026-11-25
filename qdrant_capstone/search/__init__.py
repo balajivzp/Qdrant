@@ -1,0 +1,1 @@
+"""Qdrant semantic search capstone."""

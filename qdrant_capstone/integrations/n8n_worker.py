@@ -10,18 +10,18 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from time import monotonic
 
-ROOT = Path(__file__).resolve().parents[1]
+from qdrant_capstone.config import ROOT
 STAGES = {
-    "sample": ("data.py", None),
-    "embed": ("embed.py", None),
-    "normalized-collections": ("qdrant_setup.py", None),
-    "normalized-metrics": ("compare.py", "results/distance_metrics.json"),
-    "hnsw-setup": ("setup_hnsw.py", None),
-    "hnsw-benchmark": ("benchmark_hnsw.py", "results/hnsw.json"),
-    "ivf-setup": ("ivf.py", None),
-    "ivf-benchmark": ("benchmark_ivf.py", "results/ivf.json"),
-    "raw-embed": ("embed_raw.py", None),
-    "raw-metrics": ("compare_raw_metrics.py", "results/distance_metrics_raw.json"),
+    "sample": ("qdrant_capstone.data.prepare", None),
+    "embed": ("qdrant_capstone.embeddings.normalized", None),
+    "normalized-collections": ("qdrant_capstone.indexes.collections", None),
+    "normalized-metrics": ("qdrant_capstone.search.compare", "results/distance_metrics.json"),
+    "hnsw-setup": ("qdrant_capstone.indexes.hnsw", None),
+    "hnsw-benchmark": ("qdrant_capstone.benchmarks.hnsw", "results/hnsw.json"),
+    "ivf-setup": ("qdrant_capstone.indexes.ivf", None),
+    "ivf-benchmark": ("qdrant_capstone.benchmarks.ivf", "results/ivf.json"),
+    "raw-embed": ("qdrant_capstone.embeddings.raw", None),
+    "raw-metrics": ("qdrant_capstone.search.raw_metrics", "results/distance_metrics_raw.json"),
 }
 STAGE_ORDER = tuple(STAGES)
 IDLE_TIMEOUT = 600
@@ -63,10 +63,10 @@ class Pipeline:
             if not allowed:
                 return HTTPStatus.CONFLICT, {"error": "Another run owns the pipeline or the stage is out of order."}
 
-            args = ["compare.py", "--query-number", str(number), "--json"] if stage == "demo" else [STAGES[stage][0]]
+            args = ["qdrant_capstone.search.compare", "--query-number", str(number), "--json"] if stage == "demo" else [STAGES[stage][0]]
             try:
                 process = subprocess.run(
-                    [sys.executable, *args],
+                    [sys.executable, "-m", *args],
                     cwd=self.root,
                     capture_output=True,
                     text=True,

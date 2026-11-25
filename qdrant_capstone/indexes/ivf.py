@@ -2,7 +2,7 @@ import joblib
 import numpy as np
 from sklearn.cluster import KMeans
 
-from embed import ARTIFACTS
+from qdrant_capstone.config import ARTIFACTS
 
 
 def build_ivf_index(vectors, ids, n_clusters=32):

@@ -3,7 +3,7 @@ import json
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-from embed import ARTIFACTS, MODEL_NAME
+from qdrant_capstone.config import ARTIFACTS, MODEL_NAME
 
 
 def main():
